@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
       role,
 
       // 🔒 Static academic info (from signup)
+      name: "Abiodun Ajibola Williams",
       matric: "2024/00001",
       department: "Computer Science",
       level: "200",
