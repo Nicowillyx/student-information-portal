@@ -18,7 +18,7 @@ export default function Announcements() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">
+      <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
         Announcements
       </h1>
 
@@ -28,7 +28,7 @@ export default function Announcements() {
           className="mb-6"
         >
           <textarea
-            className="w-full border p-2 mb-2"
+            className="w-full border p-2 mb-2 rounded bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
             placeholder="Post an announcement..."
             value={message}
             onChange={e =>
@@ -38,7 +38,7 @@ export default function Announcements() {
 
           <button
             type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
           >
             Post Announcement
           </button>
@@ -46,7 +46,7 @@ export default function Announcements() {
       )}
 
       {announcements.length === 0 && (
-        <p className="text-gray-500">
+        <p className="text-gray-600 dark:text-gray-400">
             No announcements available.
         </p>
     )}
@@ -55,10 +55,10 @@ export default function Announcements() {
         {announcements.map(a => (
           <li
             key={a.id}
-            className="border p-4 bg-white shadow"
+            className="border p-4 rounded shadow bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700"
           >
             <p>{a.message}</p>
-            <small className="text-gray-500">
+            <small className="text-gray-500 dark:text-gray-400">
               {a.date}
             </small>
           </li>
