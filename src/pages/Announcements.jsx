@@ -17,7 +17,7 @@ export default function Announcements() {
   }
 
   return (
-    <div>
+    <div className="p-3 md:p-6">
       <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
         Announcements
       </h1>
@@ -49,7 +49,7 @@ export default function Announcements() {
         <p className="text-gray-600 dark:text-gray-400">
             No announcements available.
         </p>
-    )}
+      )}
 
       <ul className="space-y-4">
         {announcements.map(a => (

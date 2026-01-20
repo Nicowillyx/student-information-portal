@@ -31,12 +31,12 @@ export default function GPA() {
   }
 
   return (
-    <div>
+    <div className="overflow-x-auto p-3 md:p-6">
       <h1 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
         GPA Calculator
       </h1>
 
-      <table className="w-full bg-white dark:bg-gray-800 rounded-lg shadow">
+      <table className="min-w-full border-collapse bg-white dark:bg-gray-800 rounded-lg shadow">
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-700">
             <th className="px-4 py-2 text-left text-gray-800 dark:text-gray-200">

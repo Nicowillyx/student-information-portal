@@ -30,7 +30,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl mx-auto px-3">
       <h1 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
         Profile
       </h1>
@@ -50,7 +50,7 @@ export default function Profile() {
         className="mb-6"
       />
 
-      <div className="space-y-4">
+      <div className="space-y-4 p-3 md:p-6">
 
         <div>
           <label className="block text-sm mb-1 text-gray-300">

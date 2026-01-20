@@ -4,7 +4,7 @@ export default function Sidebar({ setActivePage }) {
   const { user } = useAuth()
 
   return (
-    <aside className="w-64 bg-white dark:bg-gray-800 shadow-md min-h-screen">
+    <aside className="hidden md:block w-64 bg-white dark:bg-gray-800 min-h-screen">
       <ul className="p-4 space-y-4">
 
         <li onClick={() => setActivePage("dashboard")}

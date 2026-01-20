@@ -1,6 +1,6 @@
 export default function Dashboard() {
   return (
-    <div>
+    <div className="p-3 md:p-6">
       <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
