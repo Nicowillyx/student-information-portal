@@ -5,7 +5,8 @@ const ThemeContext = createContext()
 export function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("theme")
-    return saved === "dark"
+    if (saved) return saved === "dark"
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
   })
 
   useEffect(() => {
@@ -23,9 +24,7 @@ export function ThemeProvider({ children }) {
   }
 
   return (
-    <ThemeContext.Provider
-      value={{ darkMode, toggleTheme }}
-    >
+    <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )

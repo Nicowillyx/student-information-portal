@@ -1,189 +1,268 @@
-🎓 Student Information Portal
-📌 Project Overview
+# 🎓 Student Information Portal
 
-The Student Information Portal is a responsive frontend web application designed to manage and display academic information for university students and administrators. The system provides role-based access, allowing administrators and students to interact with features relevant to their roles.
+A responsive, role-based academic portal built with **React**, **Tailwind CSS**, and **Vite**. Designed for university students and administrators to manage courses, calculate GPA, post announcements, and view academic profiles.
 
-This project was developed as part of an academic frontend software development requirement, emphasizing modern UI/UX design, responsive layouts, and clean component-based architecture using React.
+> 🏫 Developed as a 200-level Frontend Software Development project at **Bells University of Technology**.
 
-🎯 Project Objectives
+---
 
-  To design a user-friendly academic portal interface
+## 🌐 Live Demo
 
-  To implement role-based access control (Admin & Student)
+🔗 **[View Live Site](https://nicowillyx.github.io/student-information-portal)**
 
-  To ensure responsiveness across mobile, tablet, and desktop devices
+---
 
-  To simulate real-world academic data handling (courses, GPA, announcements)
+## ✨ Features
 
-  To apply modern frontend development practices
+### 🔐 Authentication & Role Separation
+- **Login system** with role-based access control (Admin / Student)
+- **Quick demo login** — one-click access as Admin or Student
+- **Session persistence** — stays logged in across page refreshes
 
-🚀 Features
+### 📊 Dashboard
+- Personalized welcome banner
+- Live statistics cards (students, departments, active users)
+- **Quick action shortcuts** tailored to your role
 
-🔐 Authentication & Role Separation
+### 👨‍🎓 Student Features
+- 📚 **View registered courses** with credit units and semester info
+- 🧮 **GPA Calculator** with real-time computation and grade classification
+- 📢 **View announcements** posted by administrators
+- 👤 **View profile** with academic details and photo upload
 
-  Login system with predefined roles:
-     Admin
-     Student
+### 🧑‍💼 Admin Features
+- 👨‍🎓 **Student directory** with search/filter by name or matric number
+- 📢 **Post announcements** with character limit and delete capability
+- 📊 **Admin dashboard** overview
 
-  Conditional rendering of pages based on user role
+### 🎨 UI/UX
+- 🌗 **Dark mode toggle** with system preference detection and localStorage persistence
+- 📱 **Fully responsive** — mobile hamburger menu, collapsible sidebar, adaptive tables
+- ✨ **Smooth transitions** and hover effects throughout
+- 🎯 **Active page indicators** in navigation
 
-📊 Dashboard
+---
 
-  Central landing page for both roles
+## 🛠️ Tech Stack
 
-  Displays relevant overview information
+| Technology | Purpose |
+|------------|---------|
+| [React 19](https://react.dev) | UI library |
+| [Vite 7](https://vitejs.dev) | Build tool & dev server |
+| [Tailwind CSS 3](https://tailwindcss.com) | Utility-first styling |
+| [React Context API](https://react.dev/reference/react/useContext) | Global state management |
+| Browser LocalStorage | Data persistence (auth, theme, announcements, profile photo) |
+| [GitHub Pages](https://pages.github.com) | Deployment |
 
-👨‍🎓 Student Features
+---
 
-  View registered courses
-  GPA calculator based on selected grades
-  View announcements
-  View personal profile information
+## 📂 Project Structure
 
-🧑‍💼 Admin Features
-
-  View list of students
-  Create and manage announcements
-  Access admin dashboard tools
-
-📢 Announcements Module
-
-  Admin can post announcements
-  Announcements persist using local storage
-  Students can view announcements in real time
-
-🧮 GPA Calculator
-
-  Students input grades for registered courses
-  GPA is calculated automatically using credit units
-  Uses standard grading point logic
-
-👤 Profile Module
-
-  Displays static user details from signup
-  Profile photo upload with local persistence
-  Includes academic session information
-
-🌗 Dark Mode
-
-  Light and dark theme toggle
-  User preference stored in local storage
-
-📱 Responsive Design
-
-  Fully responsive layout
-  Mobile-friendly navigation with dropdown menu
-  Optimized tables and content for small screens
-
-🛠️ Tech Stack
-
-  Frontend: React.js (Vite)
-  Styling: Tailwind CSS
-  State Management: React Context API
-  Persistence: Browser Local Storage
-  Version Control: Git & GitHub
-  Deployment: GitHub Pages
-
-📂 Project Structure
+```
 student-information-portal/
 │
-├── src/
-│   ├── components/
-│   │   ├── Footer.jsx
-│   │   ├── Navbar.jsx
-│   │   └── Sidebar.jsx
-│   │
-│   ├── context/
-│   │   ├── AnnouncementContext.jsx
-│   │   ├── AuthContext.jsx
-│   │   └── ThemeContext.jsx
-│   │
-│   ├── data/
-│   │   └── courses.js
-│   │
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Students.jsx
-│   │   ├── Courses.jsx
-│   │   ├── GPA.jsx
-│   │   ├── Profile.jsx
-│   │   ├── Login.jsx
-│   │   └── Announcements.jsx
-│   │
-│   ├── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
+├── dist/                      # Production build output
+│   └── assets/                # Compiled JS/CSS files
 │
-├── dist/
-├── node_modules/
-├── public/
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package-lock.json
-├── package.json
-├── postcss.config.js
-├── README.md
-├── tailwind.config.js
-└── vite.config.js
+├── docs/                      # Documentation & screenshots
+│   └── screenshots/           # App screenshots for README
+│
+├── node_modules/              # Dependencies (auto-generated)
+│
+├── public/                    # Static assets
+│   └── vite.svg               # Vite logo
+│
+├── src/                       # Source code
+│   ├── assets/                # Images & static files
+│   │   └── react.svg
+│   │
+│   ├── components/            # Reusable UI components
+│   │   ├── Footer.jsx         # Footer with credits
+│   │   ├── Navbar.jsx         # Top nav + mobile menu + theme toggle + Bells logo
+│   │   └── Sidebar.jsx        # Desktop nav + user info + logout
+│   │
+│   ├── context/               # Global state providers
+│   │   ├── AnnouncementContext.jsx   # CRUD for announcements
+│   │   ├── AuthContext.jsx           # Login/logout + user state + persistence
+│   │   └── ThemeContext.jsx          # Dark/light mode toggle
+│   │
+│   ├── data/                  # Static data files
+│   │   └── courses.js         # Course list with units & semesters
+│   │
+│   ├── pages/                 # Route-level page components
+│   │   ├── Announcements.jsx  # Announcement board (admin post / student view)
+│   │   ├── Courses.jsx        # Registered courses table (student)
+│   │   ├── Dashboard.jsx      # Landing overview with stats & quick actions
+│   │   ├── GPA.jsx            # Interactive GPA calculator (student)
+│   │   ├── Login.jsx          # Auth screen with Bells logo & demo login
+│   │   ├── Profile.jsx        # User profile + photo upload
+│   │   └── Students.jsx       # Student directory with search (admin)
+│   │
+│   ├── App.jsx                # Root component + page routing logic
+│   ├── index.css              # Tailwind directives + base styles
+│   └── main.jsx               # Entry point + context providers wrapping
+│
+├── .gitignore                 # Git ignore rules
+├── eslint.config.js           # ESLint configuration
+├── index.html                 # HTML entry point
+├── package-lock.json          # Dependency lock file
+├── package.json               # Dependencies & scripts
+├── postcss.config.js          # PostCSS config (Tailwind + Autoprefixer)
+├── README.md                  # This file
+├── tailwind.config.js         # Tailwind config (darkMode: class)
+└── vite.config.js             # Vite config (base path for GitHub Pages)
+```
 
-⚙️ Installation & Setup
-1️⃣ Clone the repository
-git clone https://github.com/your-username/student-information-portal.git
+---
 
-2️⃣ Navigate into the project folder
+## 🚀 Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org) (v18+)
+- npm or yarn
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Nicowillyx/student-information-portal.git
+
+# 2. Navigate into the project
 cd student-information-portal
 
-3️⃣ Install dependencies
+# 3. Install dependencies
 npm install
 
-4️⃣ Run the development server
+# 4. Start the development server
 npm run dev
+```
 
-🌍 Deployment
+The app will be available at `http://localhost:5173`
 
-The project is deployed using GitHub Pages.
+---
 
-Build and deploy commands:
- npm run build
- npm run deploy
+## 📦 Build & Deploy
 
-🚀 Usage
+```bash
+# Build for production
+npm run build
 
-1. Open the application
-2. Log in as Admin (admin@portal.com) or Student (username@gmail.com)
-3. Navigate through the dashboard, courses, GPA, announcements, and profile
-4. Toggle dark mode as preferred
-5. Use mobile menu on smaller devices
+# Deploy to GitHub Pages
+npm run deploy
+```
 
-⚠️ Limitations
+> The `base` path in `vite.config.js` is already configured for GitHub Pages deployment.
 
-Backend and database are simulated using browser local storage
+---
 
-Authentication is frontend-based (not production secure)
+## 🔑 Demo Credentials
 
-No real-time server communication
+| Role | Email | How to Access |
+|------|-------|---------------|
+| **Admin** | `admin@portal.com` | Click "🧑‍💼 Admin" quick login button |
+| **Student** | `student@gmail.com` | Click "👨‍🎓 Student" quick login button |
 
-🔮 Future Improvements
+> No password required — this is a frontend-only demo with simulated authentication.
 
-Integrate a real backend (Node.js / Firebase)
+---
 
-Use a database for persistent storage
+## 🖼️ Screenshots
 
-Implement real authentication (JWT / OAuth)
+### Login Page
+![Login](docs/screenshots/Desktop login page.png)
+(docs/screenshots/Mobile login page.png)
+*Clean login screen with quick demo access buttons*
 
-Add result transcript export
+### Dashboard
+![Dashboard](docs/screenshots/Desktop admin dashbord.png)
+(docs/screenshots/Mobile admin dashbord.png)
+(docs/screenshots/Desktop student dashbord.png)
+*Personalized welcome banner with stats and quick actions*
 
-Add admin analytics dashboard
+### Dark Mode
+![Dark-Mode](docs/screenshots/Desktop admin dashbord dark.png)
+(docs/screenshots/Mobile admin dashbord dark.png)
+(docs/screenshots/Mobile student course page dark.png)
+(docs/screenshots/Desktop student GPA calculator dark.png)
+(docs/screenshots/Mobile student announcement dark.png)
+(docs/screenshots/Desktop student profile dark.png)
+*Fully implemented dark theme with system preference detection*
 
-👨‍💻 Author
+### Course Page
+![Course](docs/screenshots/Desktop student course page.png)
 
-Student Information Portal
-Developed by: Abiodun Ajibola Williams
-Department: Computer Science
-Institution: Bells University of Technology
 
-📜 License
+### GPA Calculator
+![GPA](docs/screenshots/Mobile student GPA calculator.png)
+*Interactive GPA calculator with real-time grade classification*
 
-This project is developed strictly for academic purposes.
+### Mobile View
+![Mobile](docs/screenshots/Mobile student profile.png)
+(docs/screenshots/Mobile admin profile.png)
+*Responsive mobile navigation with hamburger menu*
+
+### Announcement Page
+![Announcement](docs/screenshots/Desktop student announcement.png)
+
+### Profile
+![Profile](docs/screenshots/Desktop admin profile.png)
+
+
+---
+
+## 🧠 What I Learned
+
+This project was a deep dive into modern frontend development practices:
+
+- **React Context API** — Managing global state (auth, theme, announcements) without external libraries like Redux
+- **Component Architecture** — Separating concerns into reusable components, pages, and context providers
+- **Responsive Design** — Using Tailwind CSS breakpoints (`sm:`, `md:`, `lg:`) to create mobile-first layouts
+- **Dark Mode Implementation** — Leveraging Tailwind's `darkMode: "class"` strategy with `localStorage` persistence
+- **File Handling** — Using `FileReader` API for client-side image upload and base64 conversion
+- **State Management Patterns** — Functional updates to avoid stale closures, lazy initialization from `localStorage`
+- **Accessibility** — Semantic HTML, ARIA labels, keyboard navigation, and focus management
+- **Deployment** — Configuring Vite for GitHub Pages with correct `base` paths
+
+---
+
+## ⚠️ Limitations & Future Improvements
+
+### Current Limitations
+- **No backend** — All data is stored in browser `localStorage`
+- **Simulated authentication** — No real password validation or JWT tokens
+- **Static data** — Student records and courses are hardcoded
+- **No real-time updates** — Announcements don't sync across devices
+
+### Planned Improvements
+- [ ] Integrate a real backend (Node.js + Express + MongoDB or Firebase)
+- [ ] Implement JWT-based authentication with password hashing
+- [ ] Add course registration and enrollment features
+- [ ] Export GPA results as PDF transcripts
+- [ ] Admin analytics dashboard with charts
+- [ ] Email notifications for new announcements
+- [ ] Multi-department support with dynamic filtering
+
+---
+
+## 👨‍💻 Author
+
+**Abiodun Ajibola Williams**
+
+- 🎓 Computer Science, Bells University of Technology
+- 💼 Fullstack Developer (React / Node.js)
+- 🐙 [GitHub](https://github.com/Nicowillyx)
+- 💼 [LinkedIn](https://linkedin.com/in/my-profile) *(update this)*
+
+---
+
+## 📜 License
+
+This project was developed for **academic purposes** as part of a university coursework requirement.
+
+Feel free to fork, study, and build upon it — but please give credit if you use significant portions of the code.
+
+---
+
+<p align="center">
+  Built with ❤️ using React + Tailwind CSS + Vite
+</p>

@@ -9,25 +9,35 @@ export function AnnouncementProvider({ children }) {
   })
 
   const addAnnouncement = message => {
-    const updated = [
-      ...announcements,
-      {
-        id: Date.now(),
-        message,
-        date: new Date().toLocaleDateString(),
-      },
-    ]
+    setAnnouncements(prev => {
+      const updated = [
+        ...prev,
+        {
+          id: Date.now(),
+          message,
+          date: new Date().toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          }),
+        },
+      ]
+      localStorage.setItem("announcements", JSON.stringify(updated))
+      return updated
+    })
+  }
 
-    setAnnouncements(updated)
-    localStorage.setItem(
-      "announcements",
-      JSON.stringify(updated)
-    )
+  const deleteAnnouncement = id => {
+    setAnnouncements(prev => {
+      const updated = prev.filter(a => a.id !== id)
+      localStorage.setItem("announcements", JSON.stringify(updated))
+      return updated
+    })
   }
 
   return (
     <AnnouncementContext.Provider
-      value={{ announcements, addAnnouncement }}
+      value={{ announcements, addAnnouncement, deleteAnnouncement }}
     >
       {children}
     </AnnouncementContext.Provider>

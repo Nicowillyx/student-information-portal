@@ -19,47 +19,50 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const renderPage = () => {
-    if (activePage === "dashboard") return <Dashboard />
+    if (activePage === "dashboard") return <Dashboard setActivePage={setActivePage} />
 
-    if (activePage === "students" && user.role === "admin") {
+    if (activePage === "students" && user?.role === "admin") {
       return <Students />
     }
 
-    if (activePage === "courses" && user.role === "student") {
+    if (activePage === "courses" && user?.role === "student") {
       return <Courses />
     }
 
-    if (activePage === "gpa" && user.role === "student") {
+    if (activePage === "gpa" && user?.role === "student") {
       return <GPA />
     }
 
     if (activePage === "profile") return <Profile />
     if (activePage === "announcements") return <Announcements />
 
-    return <Dashboard />
+    return <Dashboard setActivePage={setActivePage} />
   }
-
 
   if (!user) {
     return <Login />
   }
 
   return (
-    
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white flex flex-col">
-      <Navbar setActivePage={setActivePage} />
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex flex-col transition-colors duration-300">
+      <Navbar
+        setActivePage={setActivePage}
+        activePage={activePage}
+      />
 
       <div className="flex flex-1">
         <Sidebar
           setActivePage={setActivePage}
+          activePage={activePage}
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
         />
 
-        <main className="flex-1 p-4 md:p-6 bg-gray-100 dark:bg-gray-900">
+        <main className="flex-1 p-4 md:p-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
           {renderPage()}
         </main>
       </div>
+
       <Footer />
     </div>
   )
