@@ -169,43 +169,43 @@ npm run deploy
 ## 🖼️ Screenshots
 
 ### Login Page
-![Login](docs/screenshots/Desktop login page.png)
-(docs/screenshots/Mobile login page.png)
+![Login](docs/screenshots/Desktop-login-page.png)
+![Login](docs/screenshots/Mobile-login-page.png)
 *Clean login screen with quick demo access buttons*
 
 ### Dashboard
-![Dashboard](docs/screenshots/Desktop admin dashbord.png)
-(docs/screenshots/Mobile admin dashbord.png)
-(docs/screenshots/Desktop student dashbord.png)
+![Dashboard](docs/screenshots/Desktop-admin-dashbord.png)
+![Dashboard](docs/screenshots/Mobile-admin-dashbord.png)
+![Dashboard](docs/screenshots/Desktop-student-dashboard.png)
 *Personalized welcome banner with stats and quick actions*
 
 ### Dark Mode
-![Dark-Mode](docs/screenshots/Desktop admin dashbord dark.png)
-(docs/screenshots/Mobile admin dashbord dark.png)
-(docs/screenshots/Mobile student course page dark.png)
-(docs/screenshots/Desktop student GPA calculator dark.png)
-(docs/screenshots/Mobile student announcement dark.png)
-(docs/screenshots/Desktop student profile dark.png)
+![Dark-Mode](docs/screenshots/Desktop-admin-dashbord-dark.png)
+![Dark-Mode](docs/screenshots/Mobile-admin-dashbord-dark.png)
+![Dark-Mode](docs/screenshots/Mobile-student-course-page-dark.png)
+![Dark-Mode](docs/screenshots/Desktop-student-GPA-calculator-dark.png)
+![Dark-Mode](docs/screenshots/Mobile-student-announcement-dark.png)
+![Dark-Mode](docs/screenshots/Desktop-student-profile-dark.png)
 *Fully implemented dark theme with system preference detection*
 
 ### Course Page
-![Course](docs/screenshots/Desktop student course page.png)
+![Course](docs/screenshots/Desktop-student-course-page.png)
 
 
 ### GPA Calculator
-![GPA](docs/screenshots/Mobile student GPA calculator.png)
+![GPA](docs/screenshots/Mobile-student-GPA-calculator.png)
 *Interactive GPA calculator with real-time grade classification*
 
 ### Mobile View
-![Mobile](docs/screenshots/Mobile student profile.png)
-(docs/screenshots/Mobile admin profile.png)
+![Mobile](docs/screenshots/Mobile-student-profile.png)
+![Mobile](docs/screenshots/Mobile-admin-profile.png)
 *Responsive mobile navigation with hamburger menu*
 
 ### Announcement Page
-![Announcement](docs/screenshots/Desktop student announcement.png)
+![Announcement](docs/screenshots/Desktop-student-announcement.png)
 
 ### Profile
-![Profile](docs/screenshots/Desktop admin profile.png)
+![Profile](docs/screenshots/Desktop-admin-profile.png)
 
 
 ---
